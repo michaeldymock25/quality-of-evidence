@@ -70,7 +70,7 @@ dat_influenza <- list(Initiation = "Not provided",
                                                        Direction = "Moderate benefit",
                                                        Importance = "Critical"),
                                                 `Serious adverse events or adverse events of special interest up to 6 months` =
-                                                  list(`Risk of Bias` = c(Rating = "Very serious", Reason = "Small sample sizes"),
+                                                  list(`Risk of Bias` = c(Rating = "Serious", Reason = "Small sample sizes"),
                                                        Inconsistency = c(Rating = "Not serious", Reason = "None"),
                                                        Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                        Imprecision = c(Rating = "Not serious", Reason = "None"),
