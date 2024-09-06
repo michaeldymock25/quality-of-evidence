@@ -27,7 +27,7 @@ dat_HPV <- list(Initiation = "Following WHO recommendation of single dose HPV sc
                                                  Direction = "Large benefit",
                                                  Importance = "Critical"),
                                           `Effectiveness against genital infection at 12 months` =
-                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                  Inconsistency = c(Rating = "Not assessed", Reason = "Only one study included"),
                                                  Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                  Imprecision = c(Rating = "Not serious", Reason = "None"),
@@ -36,7 +36,7 @@ dat_HPV <- list(Initiation = "Following WHO recommendation of single dose HPV sc
                                                  Direction = "Moderate benefit",
                                                  Importance = "Critical"),
                                           `Effectiveness against CIN3+ infection at 24 months` =
-                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                  Inconsistency = c(Rating = "Not assessed", Reason = "Only one study included"),
                                                  Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                  Imprecision = c(Rating = "Not serious", Reason = "None"),
@@ -63,7 +63,7 @@ dat_HPV <- list(Initiation = "Following WHO recommendation of single dose HPV sc
                                                  Direction = "Little to no difference",
                                                  Importance = "Critical"),
                                           `Serious adverse events` =
-                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                  Inconsistency = c(Rating = "Not serious", Reason = "None"),
                                                  Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                  Imprecision = c(Rating = "Not serious", Reason = "None"),
@@ -81,7 +81,7 @@ dat_HPV <- list(Initiation = "Following WHO recommendation of single dose HPV sc
                                                  Direction = "Little to no difference",
                                                  Importance = "Important"),
                                           `Seropositivity at 7 months` =
-                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                  Inconsistency = c(Rating = "Not assessed", Reason = "Only one study included"),
                                                  Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                  Imprecision = c(Rating = "Not serious", Reason = "None"),
@@ -90,7 +90,7 @@ dat_HPV <- list(Initiation = "Following WHO recommendation of single dose HPV sc
                                                  Direction = "Little to no difference",
                                                  Importance = "Important"),
                                           `Seropositivity at 12 months` =
-                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                  Inconsistency = c(Rating = "Not assessed", Reason = "Only one study included"),
                                                  Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                  Imprecision = c(Rating = "Not serious", Reason = "None"),
@@ -99,7 +99,7 @@ dat_HPV <- list(Initiation = "Following WHO recommendation of single dose HPV sc
                                                  Direction = "Little to no difference",
                                                  Importance = "Important"),
                                           `Seropositivity at 24 months` =
-                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                            list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                  Inconsistency = c(Rating = "Not assessed", Reason = "Only one study included"),
                                                  Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                  Imprecision = c(Rating = "Not serious", Reason = "None"),

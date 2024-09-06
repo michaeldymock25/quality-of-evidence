@@ -59,7 +59,7 @@ dat_cholera <- list(Initiation = "Anticipation of TGA approval of Vaxchora",
                                                   Direction = "Large benefit",
                                                   Importance = "Critical"),
                                            `Serious adverse events up to 180 days` =
-                                             list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selection of reported results"),
+                                             list(`Risk of Bias` = c(Rating = "Serious", Reason = "Selective outcome reporting"),
                                                   Inconsistency = c(Rating = "Not serious", Reason = "None"),
                                                   Indirectness = c(Rating = "Not serious", Reason = "None"),
                                                   Imprecision = c(Rating = "Not serious", Reason = "None"),
