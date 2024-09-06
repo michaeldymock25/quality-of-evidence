@@ -1,6 +1,7 @@
 
 ## This document contains the analyses of the GRADE assessments for the "What is the quality of evidence informing vaccine policy recommendations in Australia?" manuscript
 
+library(here)
 library(data.table)
 library(stringr)
 library(ggplot2)
@@ -11,14 +12,14 @@ colours <- c("#88CCEE", "#CC6677", "#DDCC77", "#117733")
 
 ## Read in the data (note the below scripts containing the data must be located in the same working directory as this analysis script)
 
-source("dat_cholera.R")
-source("dat_DTP.R")
-source("dat_HPV.R")
-source("dat_influenza.R")
-source("dat_meningococcal.R")
-source("dat_pneumococcal.R")
-source("dat_rabies.R")
-source("dat_zoster.R")
+source(here("R Scripts/dat_cholera.R"))
+source(here("R Scripts/dat_DTP.R"))
+source(here("R Scripts/dat_HPV.R"))
+source(here("R Scripts/dat_influenza.R"))
+source(here("R Scripts/dat_meningococcal.R"))
+source(here("R Scripts/dat_pneumococcal.R"))
+source(here("R Scripts/dat_rabies.R"))
+source(here("R Scripts/dat_zoster.R"))
 
 dat <- list(dat_cholera, dat_DTP, dat_HPV, dat_influenza, dat_meningococcal, dat_pneumococcal, dat_rabies, dat_zoster)
 areas_l <- c("Cholera", "DTP", "HPV", "Influenza", "Meningococcal", "Pneumococcal", "Rabies", "Zoster")
@@ -65,8 +66,7 @@ ggplot(certainty[, .N, by = .(certainty, question, area)], aes(x = question, y =
   geom_bar(position = position_stack(reverse = TRUE), stat = "identity") +
   scale_x_discrete("Research Question") +
   scale_y_continuous("Number of Outcomes", n.breaks = 7) +
-  #scale_fill_grey("Certainty of Evidence", start = 0, end = 0.9) +
-  scale_fill_manual("Certainty of Evidence", values = colours) +
+  scale_fill_manual("Quality of Evidence", values = colours) +
   theme_bw() +
   theme(legend.position = "bottom", panel.grid.major.x = element_blank())
 
@@ -81,8 +81,7 @@ ggplot(certainty[, .N, by = .(certainty, type, area)], aes(x = type, y = N, fill
   geom_bar(position = position_stack(reverse = TRUE), stat = "identity") +
   scale_x_discrete("Outcome Category") +
   scale_y_continuous("Number of Outcomes", n.breaks = 7) +
-  #scale_fill_grey("Certainty of Evidence", start = 0, end = 0.9) +
-  scale_fill_manual("Certainty of Evidence", values = colours) +
+  scale_fill_manual("Quality of Evidence", values = colours) +
   theme_bw() +
   theme(legend.position = "bottom", panel.grid.major.x = element_blank())
 
@@ -146,12 +145,12 @@ grade[, `:=`(
 
 jpeg("Figure 3.jpeg", width = 6, height = 7, units = "in", res = 1000)
 
-ggplot(grade, aes(x = variable, y = value, group = interaction(outcome, Question), colour = certainty)) +
+ggplot(grade, aes(x = variable, y = value, group = interaction(outcome, question), colour = certainty)) +
   facet_wrap(~area, ncol = 2) +
   geom_line(position = position_jitter(width = 0, height = 0.2)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours) +
+  scale_colour_manual("Quality of Evidence", values = colours) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -166,7 +165,7 @@ ggplot(grade[area == "HPV"], aes(x = variable, y = value, group = outcome, colou
   geom_line(position = position_jitter(width = 0, height = 0.03)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours, drop = FALSE) +
+  scale_colour_manual("Quality of Evidence", values = colours, drop = FALSE) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -181,7 +180,7 @@ ggplot(grade[area == "Influenza"], aes(x = variable, y = value, group = outcome,
   geom_line(position = position_jitter(width = 0, height = 0.1)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours, drop = FALSE) +
+  scale_colour_manual("Quality of Evidence", values = colours, drop = FALSE) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -196,7 +195,7 @@ ggplot(grade[area == "Meningococcal"], aes(x = variable, y = value, group = outc
   geom_line(position = position_jitter(width = 0, height = 0.1)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours, drop = FALSE) +
+  scale_colour_manual("Quality of Evidence", values = colours, drop = FALSE) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -211,7 +210,7 @@ ggplot(grade[area == "Pneumococcal"], aes(x = variable, y = value, group = outco
   geom_line(position = position_jitter(width = 0, height = 0.15)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours, drop = FALSE) +
+  scale_colour_manual("Quality of Evidence", values = colours, drop = FALSE) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -226,7 +225,7 @@ ggplot(grade[area == "Rabies"], aes(x = variable, y = value, group = outcome, co
   geom_line(position = position_jitter(width = 0, height = 0.08)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours, drop = FALSE) +
+  scale_colour_manual("Quality of Evidence", values = colours, drop = FALSE) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -241,7 +240,7 @@ ggplot(grade[area == "Zoster"], aes(x = variable, y = value, group = outcome, co
   geom_line(position = position_jitter(width = 0, height = 0.08)) +
   scale_x_discrete("Assessment Category", guide = guide_axis(n.dodge = 2)) +
   ylab("Number of levels downgraded") +
-  scale_colour_manual("Certainty of Evidence", values = colours, drop = FALSE) +
+  scale_colour_manual("Quality of Evidence", values = colours, drop = FALSE) +
   theme_bw() +
   theme(legend.position = "bottom")
 
@@ -331,4 +330,3 @@ importance <- rbindlist(lapply(areas_l, function(x)
                         idcol = "area")
 importance[, area := factor(area, labels = areas_l)]
 importance[, table(importance)]
-
