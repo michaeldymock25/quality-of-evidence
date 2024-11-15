@@ -1,8 +1,8 @@
-# What is the quality of evidence informing vaccine policy in Australia?
+# What is the quality of evidence informing vaccine clinical practice in Australia?
 
 ## Outline
 
-This repository contains the data and code necessary to replicate the analysis for the Dymock et. al. manuscript entitled *What is the quality of evidence informing vaccine policy recommendations in Australia?*.
+This repository contains the data and code necessary to replicate the analysis for the Dymock et. al. manuscript entitled *What is the quality of evidence informing vaccine clinical practice recommendations in Australia?*.
 
 ## Details
 
