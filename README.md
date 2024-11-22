@@ -1,4 +1,4 @@
-# What is the quality of evidence informing vaccine clinical practice in Australia?
+# What is the quality of evidence informing vaccine clinical practice recommendations in Australia?
 
 ## Outline
 
